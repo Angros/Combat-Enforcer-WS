@@ -1,0 +1,260 @@
+//============================================================================
+// control/client/interfaces/serverscreen.gui
+//
+//  Master Server query interface module for 3DGPAI1 koob23 sample game
+//
+//  Copyright (c) 2003 by Kenneth C.  Finney.
+//============================================================================
+
+new GuiChunkedBitmapCtrl(ServerScreen) {
+   profile = "GuiContentProfile";
+   horizSizing = "width";
+   vertSizing = "height";
+   position = "0 0";
+   extent = "640 480";
+   minExtent = "8 8";
+   visible = "1";
+   bitmap = "./emaga_background.jpg";
+   useVariable = "0";
+   tile = "0";
+   helpTag = "0";
+
+   new GuiControl() {
+      profile = "GuiWindowProfile";
+      horizSizing = "center";
+      vertSizing = "center";
+      position = "20 90";
+      extent = "600 300";
+      minExtent = "8 8";
+      visible = "1";
+      helpTag = "0";
+
+      new GuiTextCtrl() {
+         profile = "GuiTextProfile";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         position = "183 5";
+         extent = "63 18";
+         minExtent = "8 8";
+         visible = "1";
+         text = "Account Name:";
+         maxLength = "255";
+         helpTag = "0";
+      };
+
+      new GuiTextEditCtrl() {
+         profile = "GuiTextEditProfile";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         position = "250 5";
+         extent = "134 18";
+         minExtent = "8 8";
+         visible = "1";
+         variable = "Pref::Player::Name";
+         maxLength = "255";
+         historySize = "5";
+         password = "0";
+         tabComplete = "0";
+         sinkAllKeyEvents = "0";
+            helpTag = "0";
+      };
+
+      new GuiTextCtrl() {
+         profile = "GuiTextProfile";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         position = "13 30";
+         extent = "24 18";
+         minExtent = "8 8";
+         visible = "1";
+         text = "Private ?";
+         maxLength = "255";
+         helpTag = "0";
+      };
+      new GuiTextCtrl() {
+         profile = "GuiTextProfile";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         position = "76 30";
+         extent = "63 18";
+         minExtent = "8 8";
+         visible = "1";
+         text = "Server Name";
+         maxLength = "255";
+         helpTag = "0";
+      };
+      new GuiTextCtrl() {
+         profile = "GuiTextProfile";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         position = "216 30";
+         extent = "20 18";
+         minExtent = "8 8";
+         visible = "1";
+         text = "Ping";
+         maxLength = "255";
+         helpTag = "0";
+      };
+      new GuiTextCtrl() {
+         profile = "GuiTextProfile";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         position = "251 30";
+         extent = "36 18";
+         minExtent = "8 8";
+         visible = "1";
+         text = "Players";
+         maxLength = "255";
+         helpTag = "0";
+      };
+      new GuiTextCtrl() {
+         profile = "GuiTextProfile";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         position = "295 30";
+         extent = "38 18";
+         minExtent = "8 8";
+         visible = "1";
+         text = "Version";
+         maxLength = "255";
+         helpTag = "0";
+      };
+      new GuiTextCtrl() {
+         profile = "GuiTextProfile";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         position = "433 30";
+         extent = "28 18";
+         minExtent = "8 8";
+         visible = "1";
+         text = "Game Description";
+         maxLength = "255";
+         helpTag = "0";
+      };
+
+      new GuiScrollCtrl() {
+         profile = "GuiScrollProfile";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         position = "14 55";
+         extent = "580 190";
+         minExtent = "8 8";
+         visible = "1";
+         willFirstRespond = "1";
+         hScrollBar = "dynamic";
+         vScrollBar = "alwaysOn";
+         constantThumbHeight = "0";
+         childMargin = "0 0";
+         helpTag = "0";
+         defaultLineHeight = "15";
+
+         new GuiTextListCtrl(SSServerList) {
+            profile = "GuiTextArrayProfile";
+            horizSizing = "right";
+            vertSizing = "bottom";
+            position = "2 2";
+            extent = "558 48";
+            minExtent = "8 8";
+            visible = "1";
+            enumerate = "0";
+            resizeCell = "1";
+            columns = "0 30 200 240 280 400";
+            fitParentWidth = "1";
+            clipColumnText = "0";
+            noDuplicates = "false";
+            helpTag = "0";
+         };
+      };
+
+      new GuiButtonCtrl() {
+         profile = "GuiButtonProfile";
+         horizSizing = "right";
+         vertSizing = "top";
+         position = "16 253";
+         extent = "127 23";
+         minExtent = "8 8";
+         visible = "1";
+         command = "Canvas.getContent().Close();";
+         text = "Close";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         helpTag = "0";
+      };
+      new GuiButtonCtrl(QueryLan) {
+         profile = "GuiButtonProfile";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         position = "299 253";
+         extent = "130 25";
+         minExtent = "8 8";
+         visible = "1";
+         command = "Canvas.getContent().QueryLan();";
+         text = "Query Lan";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         helpTag = "0";
+      };
+      new GuiButtonCtrl(SSJoinServer) {
+         profile = "GuiButtonProfile";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         position = "455 253";
+         extent = "130 25";
+         minExtent = "8 8";
+         visible = "1";
+         command = "Canvas.getContent().Join();";
+         text = "Join Server";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         active = "0";
+         helpTag = "0";
+      };
+
+      new GuiControl(SSQueryStatus) {
+         profile = "GuiWindowProfile";
+         horizSizing = "center";
+         vertSizing = "center";
+         position = "149 100";
+         extent = "310 50";
+         minExtent = "8 8";
+         visible = "0";
+         helpTag = "0";
+
+         new GuiButtonCtrl(SSCancelQuery) {
+            profile = "GuiButtonProfile";
+            horizSizing = "right";
+            vertSizing = "bottom";
+            position = "9 15";
+            extent = "64 20";
+            minExtent = "8 8";
+            visible = "1";
+            command = "Canvas.getContent().Cancel();";
+            text = "Cancel";
+            groupNum = "-1";
+            buttonType = "PushButton";
+            helpTag = "0";
+         };
+         new GuiProgressCtrl(SSStatusBar) {
+            profile = "GuiProgressProfile";
+            horizSizing = "right";
+            vertSizing = "bottom";
+            position = "84 15";
+            extent = "207 20";
+            minExtent = "8 8";
+            visible = "1";
+            helpTag = "0";
+         };
+         new GuiTextCtrl(SSStatusText) {
+            profile = "GuiProgressTextProfile";
+            horizSizing = "right";
+            vertSizing = "bottom";
+            position = "85 14";
+            extent = "205 20";
+            minExtent = "8 8";
+            visible = "1";
+            maxLength = "255";
+            helpTag = "0";
+         };
+      };
+   };
+};

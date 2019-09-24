@@ -1,0 +1,125 @@
+//--- OBJECT WRITE BEGIN ---
+%guiContent = new GuiChunkedBitmapCtrl(MenuScreen) {
+   bitmap = "control/client/interfaces/interfaces/emaga_background";
+   useVariable = "0";
+   tile = "0";
+   position = "0 0";
+   extent = "1024 768";
+   minExtent = "8 8";
+   horizSizing = "width";
+   vertSizing = "height";
+   profile = "GuiContentProfile";
+   visible = "1";
+   active = "1";
+   tooltipProfile = "GuiToolTipProfile";
+   hovertime = "1000";
+   isContainer = "1";
+   canSave = "1";
+   canSaveDynamicFields = "1";
+      helpTag = "0";
+
+   new GuiButtonCtrl() {
+      text = "Play Solo";
+      groupNum = "-1";
+      buttonType = "PushButton";
+      useMouseEvents = "0";
+      position = "29 426";
+      extent = "120 20";
+      minExtent = "8 8";
+      horizSizing = "right";
+      vertSizing = "top";
+      profile = "GuiButtonProfile";
+      visible = "1";
+      active = "1";
+      command = "Canvas.setContent(SoloScreen);";
+      tooltipProfile = "GuiToolTipProfile";
+      hovertime = "1000";
+      isContainer = "0";
+      canSave = "1";
+      canSaveDynamicFields = "0";
+   };
+   new GuiButtonCtrl() {
+      text = "Find a Server";
+      groupNum = "-1";
+      buttonType = "PushButton";
+      useMouseEvents = "0";
+      position = "29 460";
+      extent = "120 20";
+      minExtent = "8 8";
+      horizSizing = "right";
+      vertSizing = "top";
+      profile = "GuiButtonProfile";
+      visible = "1";
+      active = "1";
+      command = "Canvas.setContent(ServerScreen);";
+      tooltipProfile = "GuiToolTipProfile";
+      hovertime = "1000";
+      isContainer = "0";
+      canSave = "1";
+      canSaveDynamicFields = "0";
+   };
+   new GuiButtonCtrl() {
+      text = "Host Game";
+      groupNum = "-1";
+      buttonType = "PushButton";
+      useMouseEvents = "0";
+      position = "29 494";
+      extent = "120 20";
+      minExtent = "8 8";
+      horizSizing = "right";
+      vertSizing = "top";
+      profile = "GuiButtonProfile";
+      visible = "1";
+      active = "1";
+      command = "Canvas.setContent(HostScreen);";
+      tooltipProfile = "GuiToolTipProfile";
+      hovertime = "1000";
+      isContainer = "0";
+      canSave = "1";
+      canSaveDynamicFields = "0";
+   };
+   new GuiButtonCtrl() {
+      text = "Info";
+      groupNum = "-1";
+      buttonType = "PushButton";
+      useMouseEvents = "0";
+      position = "29 528";
+      extent = "120 20";
+      minExtent = "8 8";
+      horizSizing = "right";
+      vertSizing = "top";
+      profile = "GuiButtonProfile";
+      visible = "1";
+      active = "1";
+      command = "getHelp();";
+      tooltipProfile = "GuiToolTipProfile";
+      hovertime = "1000";
+      isContainer = "0";
+      canSave = "1";
+      canSaveDynamicFields = "0";
+   };
+   new GuiButtonCtrl() {
+      text = "Quit";
+      groupNum = "-1";
+      buttonType = "PushButton";
+      useMouseEvents = "0";
+      position = "29 722";
+      extent = "120 20";
+      minExtent = "8 8";
+      horizSizing = "right";
+      vertSizing = "top";
+      profile = "GuiButtonProfile";
+      visible = "1";
+      active = "1";
+      command = "Quit();";
+      tooltipProfile = "GuiToolTipProfile";
+      hovertime = "1000";
+      isContainer = "0";
+      canSave = "1";
+      canSaveDynamicFields = "0";
+   };
+};
+//--- OBJECT WRITE END ---
+
+
+

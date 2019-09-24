@@ -1,0 +1,48 @@
+new GuiControl(MessageBox)                             
+{                                                      
+   profile = "GuiDefaultProfile";                      
+   horizSizing = "width";                              
+   vertSizing = "height";                              
+   position = "0 0";                                   
+   extent = "640 480";                                 
+   minExtent = "8 8";                                  
+   visible = "0";                                      
+   noCursor = true;                                    
+                                                       
+   new GuiControl(MessageBox_Frame)                    
+   {                                                   
+      profile = "GuiDefaultProfile";                   
+      horizSizing = "right";                           
+      vertSizing = "bottom";                           
+      position = "120 375";                            
+      extent = "400 24";                               
+      minExtent = "8 8";                               
+      visible = "1";                                   
+                                                       
+      new GuiTextCtrl(MessageBox_Text)                 
+      {                                                
+         profile = "GuiTextProfile";                   
+         horizSizing = "right";                        
+         vertSizing = "bottom";                        
+         position = "6 5";                             
+         extent = "10 22";                             
+         minExtent = "8 8";                            
+         visible = "1";                                
+      };                                               
+                                                       
+      new GuiTextEditCtrl(MessageBox_Edit)             
+      {                                                
+         profile = "GuiTextEditProfile";               
+         horizSizing = "right";                        
+         vertSizing = "bottom";                        
+         position = "0 5";                             
+         extent = "10 22";                             
+         minExtent = "8 8";                            
+         visible = "1";                                
+         altCommand = "$ThisControl.eval();";          
+         escapeCommand = "MessageBox_Edit.onEscape();";
+         historySize = "5";                            
+         maxLength = "120";                            
+      };                                               
+   };                                                  
+};                                                     
